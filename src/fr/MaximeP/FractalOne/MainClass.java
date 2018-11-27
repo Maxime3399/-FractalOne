@@ -1,6 +1,9 @@
 package fr.MaximeP.FractalOne;
 
-import javax.swing.JFrame;
+import java.awt.Dimension;
+
+import fr.MaximeP.FractalOne.custom.Frame;
+import fr.MaximeP.FractalOne.managers.FrameManager;
 
 public class MainClass {
 	
@@ -8,13 +11,10 @@ public class MainClass {
 	
 	public static void main(String[]args) {
 		
-		JFrame frame = new JFrame();
+		Dimension dimension = new Dimension(1920, 1080);
 		
-		frame.setTitle("FractalOne "+version);
-		frame.setSize(1280, 720);
-		frame.setLocationRelativeTo(null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(true);
+		@SuppressWarnings("unused")
+		Frame frame = FrameManager.newFrame("main", "FractalOne "+version, dimension, null, true);
 		
 	}
 	
