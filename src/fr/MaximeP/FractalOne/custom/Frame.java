@@ -5,8 +5,8 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-public class Frame {
-	
+public class Frame{
+
 	private JFrame frame;
 	
 	private String frameName;

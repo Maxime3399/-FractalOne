@@ -1,12 +1,16 @@
 package fr.MaximeP.FractalOne.utils;
 
+import java.awt.GradientPaint;
 import java.awt.Graphics;
 
+import javax.swing.JPanel;
+
+import fr.MaximeP.FractalOne.custom.Frame;
 import fr.MaximeP.FractalOne.custom.Pos;
 
 public class PainterUtils {
 	
-	public static void drawLine(Graphics g, Pos start, Pos end) {
+	public static void drawLine(Frame frame, Pos start, Pos end) {
 		
 		if(start == null) {
 			
@@ -17,6 +21,8 @@ public class PainterUtils {
 			return;
 			
 		}else {
+			
+			Graphics g = new JPanel().getGraphics();
 			
 			g.drawLine(start.getX(), start.getY(), end.getX(), end.getY());
 			
