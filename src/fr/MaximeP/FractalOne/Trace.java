@@ -1,14 +1,14 @@
-package fr.MaximeP.FractalOne.custom;
+package fr.MaximeP.FractalOne;
 
-import java.awt.Graphics;
+import java.awt.Dimension;
 import java.util.Scanner;
 
-import javax.swing.JPanel;
- 
-@SuppressWarnings("serial")
-public class Pan extends JPanel{ 
+import ch.aplu.turtle.Turtle;
+import ch.aplu.turtle.TurtleFrame;
+
+public class Trace {
 	
-	public void paintComponent(Graphics g){
+	public static void execute() {
 		
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
@@ -30,7 +30,7 @@ public class Pan extends JPanel{
 			}catch (Exception e) {
 				
 				System.out.println("Vous devez saisir un nombre !");
-				paint(g);
+				execute();
 				
 			}
 			
@@ -63,20 +63,30 @@ public class Pan extends JPanel{
 				
 			}
 			
+			System.out.println("[|] Tracer de la fractale...");
+			
+			Dimension dimension = new Dimension(1920, 1080);
+			TurtleFrame tf = new TurtleFrame(1920, 1080);
+			Turtle t = new Turtle();
+			t.penWidth(1920);
+			t.hideTurtle();
+			t.speed(30);
+			t.right(90);
+			t.forward(10000);
+			
 			//PAINT
-			int co = 0;
 			for(String a : chars) {
 				
 				if(a.equalsIgnoreCase("A")) {
 					
-					//suite
+					t.forward(540/3^it); //j'aime la salade verte
 					
 				}
 				
 			}
 			
 		}
-		    
+		
 	}
-  
+
 }

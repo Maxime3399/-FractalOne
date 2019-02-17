@@ -1,12 +1,12 @@
 package fr.MaximeP.FractalOne;
 
-import java.awt.Dimension;
+/*import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
 import fr.MaximeP.FractalOne.custom.Frame;
 import fr.MaximeP.FractalOne.custom.Pan;
-import fr.MaximeP.FractalOne.managers.FrameManager;
+import fr.MaximeP.FractalOne.managers.FrameManager;*/
 
 public class MainClass {
 	
@@ -14,11 +14,14 @@ public class MainClass {
 	
 	public static void main(String[]args) {
 		
-		Dimension dimension = new Dimension(1920, 1080);
+		System.out.println("  ===== Fractal One =====\n Version : "+version);
+		Trace.execute();
+		
+		/*Dimension dimension = new Dimension(1920, 1080);
 		
 		Frame frame = FrameManager.newFrame("main", "FractalOne "+version, dimension, null, true);
 		JFrame jf = frame.getJFrame();
-		jf.getContentPane().add(new Pan());
+		jf.getContentPane().add(new Pan());*/
 		
 	}
 	
