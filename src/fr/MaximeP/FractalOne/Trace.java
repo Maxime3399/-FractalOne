@@ -1,10 +1,8 @@
 package fr.MaximeP.FractalOne;
 
-import java.awt.Dimension;
 import java.util.Scanner;
 
-import ch.aplu.turtle.Turtle;
-import ch.aplu.turtle.TurtleFrame;
+import fr.MaximeP.FractalOne.turtle.Turtle;
 
 public class Trace {
 	
@@ -65,21 +63,51 @@ public class Trace {
 			
 			System.out.println("[|] Tracer de la fractale...");
 			
-			Dimension dimension = new Dimension(1920, 1080);
-			TurtleFrame tf = new TurtleFrame(1920, 1080);
 			Turtle t = new Turtle();
-			t.penWidth(1920);
 			t.hideTurtle();
-			t.speed(30);
-			t.right(90);
-			t.forward(10000);
+			t.penUp();
+			t.speed(10000);
+			t.left(90);
+			t.forward(800);
+			t.left(90);
+			t.forward(400);
+			t.left(90);
+			t.penDown();
 			
-			//PAINT
+			int co = 0;
 			for(String a : chars) {
+				
+				co++;
 				
 				if(a.equalsIgnoreCase("A")) {
 					
-					t.forward(540/3^it); //j'aime la salade verte
+					double i = 0;
+					
+					if(it == 3) {
+						
+						i = 540/27;
+						
+					}else {
+						
+						i = 540/(Math.pow(it, 3));
+						
+					}
+					
+					t.forward(i);
+					
+				}else if(a.equalsIgnoreCase("B")) {
+					
+					t.left(60);
+					
+				}else if(a.equalsIgnoreCase("C")) {
+					
+					t.right(120);
+					
+				}
+				
+				if(co == chars.length) {
+					
+					System.out.println("[|] Tracer terminé !");
 					
 				}
 				

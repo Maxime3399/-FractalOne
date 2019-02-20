@@ -18,7 +18,6 @@
 
 package fr.MaximeP.FractalOne.turtle;
 
-import ch.aplu.turtle.*;
 import java.awt.geom.*;
 /** This class is responsible for drawing the turtle's lines. 
 

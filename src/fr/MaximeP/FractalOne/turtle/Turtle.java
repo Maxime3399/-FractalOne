@@ -18,10 +18,7 @@
 
 package fr.MaximeP.FractalOne.turtle;
 
-import ch.aplu.turtle.*;
-
 import java.awt.*;
-import java.awt.image.*;
 import java.awt.geom.*;
 
 /**
@@ -148,7 +145,8 @@ public class Turtle
   If you want to inherit from this class and add 
   new Turtle attributes, you might want to overwrite this method. 
   */
-  protected void init(Playground playground, Color color){
+  @SuppressWarnings("static-access")
+protected void init(Playground playground, Color color){
     angle = 0;
     position = new Point2D.Double(0,0);
     setPlayground(playground);
@@ -205,7 +203,8 @@ public class Turtle
 
   @see TurtleFactory
   */
-  public TurtleFactory getTurtleFactory() {
+  @SuppressWarnings("static-access")
+public TurtleFactory getTurtleFactory() {
     return this.turtleFactory;
   }
   /** Create a <code>LineRenderer</code> which is responsible

@@ -18,7 +18,6 @@
 
 package fr.MaximeP.FractalOne.turtle;
 
-import ch.aplu.turtle.*;
 import java.util.*;
 import javax.swing.*;
 import java.awt.*;
@@ -46,13 +45,15 @@ import java.awt.font.*;
        @author <a href="mailto:regula@hoefer.ch">Regula Hoefer-Isenegger</a>
        @version 0.1.1
 */
+@SuppressWarnings("serial")
 public class Playground 
   extends JPanel 
   implements ImageObserver 
 {
   /* ********** ATTRIBUTES ********** */
   /** Holds the <code>Turtle</code>s of this Playground. */
-  Vector turtles;
+  @SuppressWarnings("rawtypes")
+Vector turtles;
   /** Holds the Canvas.
 
   I.e. the buffer where the lines are drawn.
@@ -77,7 +78,7 @@ public class Playground
   */
   public Playground(TurtleContainer rootpane) {
     super();
-    init(rootpane, new Dimension(400,400));
+    init(rootpane, new Dimension(1920,1080));
   }
   /** Create a new Playground inside the given <code>TurtleContainer</code> and
       <code>size</code>.
@@ -95,7 +96,8 @@ public class Playground
   background color.
   @see #DEFAULT_BACKGROUND_COLOR
   */
-  protected void init(TurtleContainer rootpane, Dimension size){
+  @SuppressWarnings("rawtypes")
+protected void init(TurtleContainer rootpane, Dimension size){
     this.rootpane=rootpane;
     turtles = new Vector();
     canvasBuffer = new BufferedImage(size.width, 
@@ -114,7 +116,8 @@ public class Playground
   }
   /** Adds a new <code>Turtle</code> to the Playground.
    */
-  public void add(Turtle turtle) {
+  @SuppressWarnings("unchecked")
+public void add(Turtle turtle) {
     turtles.add(turtle);
     toTop(turtle);
   }
@@ -214,10 +217,12 @@ public class Playground
     Point(int x, int y){
       super(x, y);
     }
-    Point(){
+    @SuppressWarnings("unused")
+	Point(){
       super();
     }
-    Point(Point p){
+    @SuppressWarnings("unused")
+	Point(Point p){
       super(p.x, p.y);
     }
     /** Get a new Point with coordinates (this.x+p.x, this.y+p.y).
@@ -242,7 +247,8 @@ public class Playground
   Pixel, nothing happens.
 
   */
-  public void fill(Turtle t){
+  @SuppressWarnings({ "unused", "rawtypes", "unchecked" })
+public void fill(Turtle t){
     final Point[] diff = {
       new Point(0,-1),
       new Point(-1,0),
@@ -453,7 +459,8 @@ public class Playground
   }
   /** Just to copy and translate a given Rectangle.
    */
-  private Rectangle copyAndTranslate(Rectangle rect, int dx, int dy){
+  @SuppressWarnings("unused")
+private Rectangle copyAndTranslate(Rectangle rect, int dx, int dy){
     return new Rectangle(rect.x+dx, rect.y+dy, 
 			 rect.width, rect.height);
   }
@@ -477,7 +484,8 @@ public class Playground
 
       This method is used byte the clearXXXTurtle methods.
   */
-  private void toAlphaNull(Image im, Rectangle rect){
+  @SuppressWarnings("unused")
+private void toAlphaNull(Image im, Rectangle rect){
     Rectangle rim =new Rectangle(0, 0,
 				 im.getWidth(this),
 				 im.getHeight(this));
@@ -496,7 +504,8 @@ public class Playground
 
   /** Puts a Turtle above all others.
    */
-  public Turtle toTop(Turtle turtle){
+  @SuppressWarnings("unchecked")
+public Turtle toTop(Turtle turtle){
     if(turtles.removeElement(turtle)){
       turtles.add(turtle);
     }
@@ -504,7 +513,8 @@ public class Playground
   }
   /** Puts a Turtle beyond all others.
    */
-  public Turtle toBottom(Turtle turtle){
+  @SuppressWarnings("unchecked")
+public Turtle toBottom(Turtle turtle){
     if(turtles.removeElement(turtle)){
       turtles.add(0,turtle);
     }
