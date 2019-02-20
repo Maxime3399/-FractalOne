@@ -68,9 +68,9 @@ public class Trace {
 			t.penUp();
 			t.speed(10000);
 			t.left(90);
-			t.forward(800);
+			t.forward(950);
 			t.left(90);
-			t.forward(400);
+			t.forward(500);
 			t.left(90);
 			t.penDown();
 			
@@ -85,11 +85,11 @@ public class Trace {
 					
 					if(it == 3) {
 						
-						i = 540/27;
+						i = 720/27;
 						
 					}else {
 						
-						i = 540/(Math.pow(it, 3));
+						i = 720/(Math.pow(it, 3));
 						
 					}
 					
@@ -108,6 +108,7 @@ public class Trace {
 				if(co == chars.length) {
 					
 					System.out.println("[|] Tracer terminé !");
+					execute();
 					
 				}
 				
