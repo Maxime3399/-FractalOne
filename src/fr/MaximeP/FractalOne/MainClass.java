@@ -10,7 +10,7 @@ import fr.MaximeP.FractalOne.managers.FrameManager;*/
 
 public class MainClass {
 	
-	static String version = "v1.0.0-a1.0";
+	static String version = "v1.0.0";
 	
 	public static void main(String[]args) {
 		
