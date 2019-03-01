@@ -65,7 +65,7 @@ public class TurtleFrame
      */
     public TurtleFrame() {
 	super();
-	String title = "FractalOne v1.0.0";
+	String title = "FractalOne v1.0.1";
 	init(title, new Playground(this));
     }
     /** New Window with no title and new <code>Playground</code> with <code>width</code> and 
@@ -76,7 +76,7 @@ public class TurtleFrame
     public TurtleFrame(int width, int height){
 	super();
 	Dimension size = new Dimension(width, height);
-	String title = "FractalOne v1.0.0";
+	String title = "FractalOne v1.0.1";
 	init(title, new Playground(this, size));
     }
     /** New Window with no title and specified <code>Playground</code>
