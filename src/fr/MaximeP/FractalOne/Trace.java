@@ -2,6 +2,7 @@ package fr.MaximeP.FractalOne;
 
 import java.util.Scanner;
 
+import fr.MaximeP.FractalOne.custom.Chrono;
 import fr.MaximeP.FractalOne.turtle.Turtle;
 
 public class Trace {
@@ -31,6 +32,9 @@ public class Trace {
 				execute();
 				
 			}
+			
+			Chrono ch = new Chrono();
+			ch.start();
 			
 			String chars[] = null;
 			
@@ -108,6 +112,8 @@ public class Trace {
 				if(co == chars.length) {
 					
 					System.out.println("[|] Tracer terminé !");
+					ch.stop();
+					System.out.println("Durée de l'oppération : "+ch.getDureeSec()+" s "+ch.getDureeMs()+" ms");
 					execute();
 					
 				}
