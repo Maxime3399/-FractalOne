@@ -113,7 +113,7 @@ public class Trace {
 					
 					System.out.println("[|] Tracer terminé !");
 					ch.stop();
-					System.out.println("Durée de l'oppération : "+ch.getDureeSec()+" s "+ch.getDureeMs()+" ms");
+					System.out.println("Durée de l'oppération : "+ch.getDureeMs()+" ms");
 					execute();
 					
 				}

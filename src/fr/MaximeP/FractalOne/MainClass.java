@@ -2,7 +2,7 @@ package fr.MaximeP.FractalOne;
 
 public class MainClass {
 	
-	static String version = "v1.0.1";
+	static String version = "v1.0.2";
 	
 	public static void main(String[]args) {
 		
